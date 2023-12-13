@@ -12,9 +12,7 @@ E.G. for some christmassy fun
 
 Then either
 
-`docker build -t video-webpage .`
-
-`docker run -p 80:80 video-webpage`
+`docker compose up`
 
 Or
 
