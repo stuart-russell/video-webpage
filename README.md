@@ -18,7 +18,7 @@ Or
 
 `poetry install`
 
-`python src/app.py`
+`poetry run python src/app.py`
 
 And open this page in your browser
 
