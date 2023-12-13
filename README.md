@@ -22,4 +22,4 @@ Or
 
 And open this page in your browser
 
-`http://0.0.0.0:5000/Arwx8LLxlx8`
+`http://0.0.0.0/Arwx8LLxlx8`
