@@ -1,29 +1,9 @@
-FROM python:3.12.1-bookworm
+FROM python:3.12-slim
 
-# Install Rust
-RUN apt update -y
-RUN apt install rustc -y
+COPY requirements.txt .
 
-# Configure Poetry
-ENV POETRY_VERSION=1.6.1
-ENV POETRY_HOME=/opt/poetry
-ENV POETRY_VENV=/opt/poetry-venv
-ENV POETRY_CACHE_DIR=/opt/.cache
+RUN pip install -r requirements.txt
 
-# Install poetry separated from system interpreter
-RUN python3 -m venv $POETRY_VENV \
-    && $POETRY_VENV/bin/pip install -U pip setuptools \
-    && $POETRY_VENV/bin/pip install poetry==${POETRY_VERSION}
+COPY . .
 
-# Add `poetry` to PATH
-ENV PATH="${PATH}:${POETRY_VENV}/bin"
-
-WORKDIR /app
-
-# Install dependencies
-COPY poetry.lock pyproject.toml ./
-RUN poetry install
-
-# Run your app
-COPY . /app
-CMD [ "poetry", "run", "python", "src/app.py"]
+CMD ["python", "src/app.py"]

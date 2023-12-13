@@ -21,4 +21,4 @@ def index(video_id):
     return render_template('index.html', embed_url=embed_url)
 
 if __name__ == '__main__':
-    serve(app, host='0.0.0.0', port=5000)
+    serve(app, host='0.0.0.0', port=80)

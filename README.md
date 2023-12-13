@@ -14,7 +14,7 @@ Then either
 
 `docker build -t video-webpage .`
 
-`docker run -p 5000:5000 video-webpage`
+`docker run -p 80:80 video-webpage`
 
 Or
 
